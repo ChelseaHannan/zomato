@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="2"
+            failures="1"
+            tests="2">
+
+  <testsuite name="zomatoAutomation"
+    errors="2" failures="1" hostname="" id="" package="zomatoAutomation" skipped="0"
+    tests="2" time="103.7" timestamp="">
+  
+    <testcase name="Popular restaurants near me" classname="zomatoAutomation" time="29.19" assertions="27">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="View all (insert popular restaurant category) restaurants in Salt Lake City green button" classname="zomatoAutomation" time="74.48" assertions="27">
+
+    
+
+      <failure message="Testing if element [0;33m&lt;Element [name=@titleResult]&gt;[0m contains text [0;33m&#39;&#39;[0m in 5000ms - expected [0;32m&#34;contains text &#39;&#39;&#34;[0m but got: [0;31m&#34;element could not be located&#34;[0m [0;90m(5122ms)[0m">    at View all (insert popular restaurant category) restaurants in Salt Lake City green button.nearMeArray.forEach.item (/Users/Chelsea/DevMountain/zomato/tests/zomatoAutomation.js:87:25)
+    at Array.forEach (&lt;anonymous&gt;)
+    at Object.View all (insert popular restaurant category) restaurants in Salt Lake City green button (/Users/Chelsea/DevMountain/zomato/tests/zomatoAutomation.js:64:21)</failure>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+      <failure message="NoSuchElementError: An error occurred while running .click() command on &lt;Element [name=@largeGreenButton]&gt;: undefined; undefined">    at process._tickCallback (internal/process/next_tick.js:68:7)</failure>
+      <error message="An error occurred while running .click() command on &lt;Element [name=@largeGreenButton]&gt;: undefined; undefined" type="error">    at process._tickCallback (internal/process/next_tick.js:68:7)</error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+      [0;31m  NoSuchElementError: An error occurred while running .getText() command on &lt;Element [name=@titleResult]&gt;: undefined; undefined
+   {&#34;sessionId&#34;:&#34;2e9c9e5c43b263df7ecd478bd03153e4&#34;,&#34;status&#34;:0,&#34;value&#34;:[]}[0m
+[0;90m       at process._tickCallback (internal/process/next_tick.js:68:7)[0m
+[0;31m  NoSuchElementError: An error occurred while running .click() command on &lt;Element [name=@largeGreenButton]&gt;: undefined; undefined
+   {&#34;sessionId&#34;:&#34;2e9c9e5c43b263df7ecd478bd03153e4&#34;,&#34;status&#34;:0,&#34;value&#34;:[]}[0m
+[0;90m       at process._tickCallback (internal/process/next_tick.js:68:7)[0m
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>
