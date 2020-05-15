@@ -3,7 +3,7 @@ var myPage = {}
 
 module.exports = {
     beforeEach: browser => {
-        myPage = browser.page.zomatoPage()
+        myPage = browser.page.zomatoPageObjects()
         myPage.navigate()
     },
 
