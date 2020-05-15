@@ -272,5 +272,10 @@ module.exports = {
             {selector: '//a[contains(text(), "Wineries near me")]',
             locateStrategy: 'xpath'}
 
+<<<<<<< HEAD
     }
 }
+=======
+}
+}
+>>>>>>> e3bc3e43ab9a5eda8c932de2f2542688708e30f1

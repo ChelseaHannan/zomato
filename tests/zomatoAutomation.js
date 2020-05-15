@@ -3,14 +3,13 @@ var myPage = {}
 
 module.exports = {
     beforeEach: browser => {
-        myPage = browser.page.zomatoPageObjects()
+        myPage = browser.page.zomatoPage()
         myPage.navigate()
     },
 
     after: browser => {
         myPage.end()
     },
-
     'Test 1: Search multiple restaurants/foods in Salt Lake City': browser => {
         var searchList = require('../testAssets/searchItemsArray')
 
