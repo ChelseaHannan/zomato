@@ -6,7 +6,7 @@ module.exports = {
         myPage = browser.page.zomatoPageObjects()
         myPage.navigate()
     },
-    after: browser => {
+    afterEach: browser => {
         myPage.end()
     },
     'Test 1: Search multiple restaurants/foods in Salt Lake City': browser => {
@@ -25,7 +25,7 @@ module.exports = {
 
     'Test: Popular restaurants near me': browser => {
         let nearMeArray = require('../testAssets/nearMeArray')
-        let originalWindow = ""
+        let originalWindow = ''
 
         nearMeArray.forEach(item => {
             //pulls current window and stores in variable
@@ -56,7 +56,7 @@ module.exports = {
 
     'Test: View all green button on category pages': browser => {
         let nearMeArray = require('../testAssets/nearMeArray')
-        let originalWindow = ""
+        let originalWindow = ''
 
         nearMeArray.forEach(item => {
             browser.windowHandle(result => {
@@ -85,7 +85,7 @@ module.exports = {
     },
 
     'Test: "Download from the app store" buttons at bottom of home page': browser => {
-        let originalWindow = ""
+        let originalWindow = ''
 
         browser
             .windowHandle(result => {
@@ -115,6 +115,50 @@ module.exports = {
             })
             .verify.urlContains('play.google.com')
             .verify.containsText('h1', 'Zomato')     
+    },
+
+    'Test: Social media links': browser => {
+        let originalWindow = ''
+
+        browser.windowHandle(result => {
+            originalWindow = result.value
+        })
+
+        myPage
+            .click('@facebookBtn')
+
+        browser
+            .windowHandles(function(result) {
+                let handle = result.value[1]
+                browser.switchWindow(handle)
+            })
+            .verify.urlContains('facebook.com/zomato')
+            .closeWindow()
+            .switchWindow(originalWindow)
+
+        myPage
+            .click('@twitterBtn')
+
+        browser
+            .windowHandles(function(result) {
+                let handle = result.value[1]
+                browser.switchWindow(handle)
+            })
+            .verify.urlContains('twitter.com/zomato')
+            .closeWindow()
+            .switchWindow(originalWindow)
+
+        myPage
+            .click('@instaBtn')
+
+        browser
+            .windowHandles(function(result) {
+                let handle = result.value[1]
+                browser.switchWindow(handle)
+            })
+            .verify.urlContains('instagram.com/zomato')
+            .closeWindow()
+            .switchWindow(originalWindow)
     },
 
 
