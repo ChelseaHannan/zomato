@@ -81,7 +81,7 @@ module.exports = {
         searchBar: {selector: '//input[@placeholder="Search for restaurant, cuisine or a dish"]', locateStrategy: 'xpath'},
         searchMagnifying: {selector: '//div[@class="sc-CtfFt dwJcvv"]"]', locateStrategy: 'xpath'},
     //View all green button
-        largeGreenButton: {selector: '//*/a[@class="ui large green button result-reviews search-result-reviews"]', locateStrategy: 'xpath'},
+        largeGreenBtn: {selector: '//*/a[@class="ui large green button result-reviews search-result-reviews"]', locateStrategy: 'xpath'},
         resultsDiv: {selector: 'div.content', locateStrategy: 'css'},
     //Sign up for account selectors
         signupBtn: {selector: '//a[contains(text(),"Signup")]', locateStrategy: 'xpath'},
@@ -94,7 +94,6 @@ module.exports = {
         createAccBtn: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/button', locateStrategy: 'xpath'},
         googleBtn: {selector: '//a[contains(text(),"Continue with Google")]', locateStrategy: 'xpath'},
     //Download from the app store buttons
-        getTheAppLink: {selector: '//a[contains(text(),"Get the App")]', locateStrategy: 'xpath'},
         appleAppBtn: {selector: '//*[@id="root"]/div[5]/div/div/div[2]/div[3]/a', locateStrategy: 'xpath'},
         googlePlayBtn: {selector: '//*[@id="root"]/div[5]/div/div/div[2]/div[3]/div/a', locateStrategy: 'xpath'},
     //Search Filters//

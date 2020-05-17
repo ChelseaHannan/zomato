@@ -72,7 +72,7 @@ module.exports = {
             })
 
             myPage
-                .click('@largeGreenButton')
+                .click('@largeGreenBtn')
 
             //assertion
             //*NOTE* This will return some errors due to bugs in the website
@@ -117,11 +117,6 @@ module.exports = {
             .verify.containsText('h1', 'Zomato')     
     },
 
-    'Test: "Get the App" link at top of homepage': browser => {
-        myPage
-            .click('@getTheAppLink')
-            .verify.urlContains('zomato.com/mobile')
-    },
 
 }
 
