@@ -1,12 +1,11 @@
 
-var myPage = {}
+let myPage = {}
 
 module.exports = {
     beforeEach: browser => {
         myPage = browser.page.zomatoPageObjects()
         myPage.navigate()
     },
-
     after: browser => {
         myPage.end()
     },
@@ -24,7 +23,7 @@ module.exports = {
         myPage.requestLinkToApplicationThroughPhoneTwice(8444338686)
     },
 
-    'Popular restaurants near me': browser => {
+    'Test: Popular restaurants near me': browser => {
         let nearMeArray = require('../testAssets/nearMeArray')
         let originalWindow = ""
 
@@ -45,7 +44,6 @@ module.exports = {
             })
 
             //assertion
-            //*NOTE* This will return some errors due to bugs in the website
             myPage
                 .verify.containsText('@titleResult', item.keyWord)
 
@@ -56,28 +54,23 @@ module.exports = {
         })
     },
 
-    'View all (insert popular restaurant category) restaurants in Salt Lake City green button': browser => {
-
+    'Test: View all green button on category pages': browser => {
         let nearMeArray = require('../testAssets/nearMeArray')
         let originalWindow = ""
 
         nearMeArray.forEach(item => {
-            //pulls current window and stores in variable
             browser.windowHandle(result => {
                 originalWindow = result.value
             })
 
-            //clicks link from 'Popular restaurants near me' 
             myPage
                 .click(item.link)
 
-            //switches to new window
             browser.windowHandles(function(result) {
                 let handle = result.value[1]
                 browser.switchWindow(handle)
             })
 
-            //clicks 'View all' green button of popular restaurant category
             myPage
                 .click('@largeGreenButton')
 
@@ -86,10 +79,49 @@ module.exports = {
             myPage
                 .verify.containsText('@titleResult', item.keyWord1)
 
-            //close current window and switch back to original window
             browser.closeWindow()
-            browser.switchWindow(originalWindow)
-                
+            browser.switchWindow(originalWindow)      
         })
     },
+
+    'Test: "Download from the app store" buttons at bottom of home page': browser => {
+        let originalWindow = ""
+
+        browser
+            .windowHandle(result => {
+            originalWindow = result.value
+            })
+
+        myPage
+            .click('@appleAppBtn')
+
+        browser
+            .windowHandles(function(result) {
+                let handle = result.value[1]
+                browser.switchWindow(handle)
+            })
+            .verify.urlContains('apps.apple.com')
+            .verify.containsText('h1', 'Zomato') 
+            .closeWindow()
+            .switchWindow(originalWindow)
+
+        myPage
+            .click('@googlePlayBtn')
+
+        browser
+            .windowHandles(function(result) {
+            let handle = result.value[1]
+            browser.switchWindow(handle)
+            })
+            .verify.urlContains('play.google.com')
+            .verify.containsText('h1', 'Zomato')     
+    },
+
+    'Test: "Get the App" link at top of homepage': browser => {
+        myPage
+            .click('@getTheAppLink')
+            .verify.urlContains('zomato.com/mobile')
+    },
+
 }
+

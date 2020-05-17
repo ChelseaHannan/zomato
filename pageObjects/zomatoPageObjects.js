@@ -59,7 +59,7 @@ var zomatoCustomCommands = {
                 }
             })
         return this
-    },
+    }
 }
 
 
@@ -77,23 +77,31 @@ module.exports = {
         phoneRadioButton: 'input[value = "mobile"]',
         phoneInput: 'input[placeholder = "type here..."]',
         shareAppLinkButton: { selector: '(//span[@class="sc-1kx5g6g-3 dkwpEa"])[1]', locateStrategy: 'xpath' },
-        locationDropdown:
-            {selector: '//input[@placeholder="Salt Lake City"]',locateStrategy: 'xpath'},
-        searchBar: 
-            {selector: '//input[@placeholder="Search for restaurant, cuisine or a dish"]',locateStrategy: 'xpath'},
-        searchMagnifying: 
-            {selector: '//div[@class="sc-CtfFt dwJcvv"]"]',locateStrategy: 'xpath'},
-        largeGreenButton:
-            {selector: '//*/a[@class="ui large green button result-reviews search-result-reviews"]', 
-            locateStrategy: 'xpath'},
-        resultsDiv:
-            {selector: 'div.content', 
-            locateStrategy: 'css'},
+        locationDropdown: {selector: '//input[@placeholder="Salt Lake City"]',locateStrategy: 'xpath'},
+        searchBar: {selector: '//input[@placeholder="Search for restaurant, cuisine or a dish"]', locateStrategy: 'xpath'},
+        searchMagnifying: {selector: '//div[@class="sc-CtfFt dwJcvv"]"]', locateStrategy: 'xpath'},
+    //View all green button
+        largeGreenButton: {selector: '//*/a[@class="ui large green button result-reviews search-result-reviews"]', locateStrategy: 'xpath'},
+        resultsDiv: {selector: 'div.content', locateStrategy: 'css'},
+    //Sign up for account selectors
+        signupBtn: {selector: '//a[contains(text(),"Signup")]', locateStrategy: 'xpath'},
+        nameField: {selector: '(//input[@class="sc-1yzxt5f-9 bbrwhB"])[3]', locateStrategy: 'xpath'},
+        emailField: {selector: '(//input[@class="sc-1yzxt5f-9 bbrwhB"])[4]', locateStrategy: 'xpath'},
+        phoneField: {selector: '//label[contains(text(), "Phone")]', locateStrategy: 'xpath'},
+        countryCode: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/div[1]/div/div/div/div[1]', locateStrategy: 'xpath'},
+        selectCC: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/div[1]/div/div/div/div[2]/div[6]/span', locateStrategy: 'xpath'},
+        tosCheckBox: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/div[2]/label/input', locateStrategy: 'xpath'},
+        createAccBtn: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/button', locateStrategy: 'xpath'},
+        googleBtn: {selector: '//a[contains(text(),"Continue with Google")]', locateStrategy: 'xpath'},
+    //Download from the app store buttons
+        getTheAppLink: {selector: '//a[contains(text(),"Get the App")]', locateStrategy: 'xpath'},
+        appleAppBtn: {selector: '//*[@id="root"]/div[5]/div/div/div[2]/div[3]/a', locateStrategy: 'xpath'},
+        googlePlayBtn: {selector: '//*[@id="root"]/div[5]/div/div/div[2]/div[3]/div/a', locateStrategy: 'xpath'},
     //Search Filters//
         orderFoodOnline:
             {selector: '//span[contains(text(),"Order Food Online")]',locateStrategy: 'xpath'},
         popularityHigh2Low:
-            {selector: '//span[contains(text(),"Popularity")]"]',locateStrategy: 'xpath'},
+            {selector: '//span[contains(text(),"Popularity")]',locateStrategy: 'xpath'},
         rating:
             {selector: '//span[contains(text(),"Rating")]',locateStrategy: 'xpath'},
         costHigh2Low:
@@ -272,10 +280,6 @@ module.exports = {
             {selector: '//a[contains(text(), "Wineries near me")]',
             locateStrategy: 'xpath'}
 
-<<<<<<< HEAD
+        
     }
 }
-=======
-}
-}
->>>>>>> e3bc3e43ab9a5eda8c932de2f2542688708e30f1
