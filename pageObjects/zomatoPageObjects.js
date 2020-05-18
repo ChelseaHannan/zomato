@@ -1,6 +1,7 @@
 var zomatoCustomCommands = {
     search5Items: function (item) {
         this
+            .pause(10000)
             .setValue('@itemSearchInput', item)
             .pause(5000)
             .click('@searchButton')
