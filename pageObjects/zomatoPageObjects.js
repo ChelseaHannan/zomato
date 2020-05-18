@@ -1,106 +1,44 @@
 var zomatoCustomCommands = {
-    search5Items: function (item) {
+    collection: function (data) { 
         this
-            .setValue('@itemSearchInput', item)
             .pause(5000)
-            .click('@searchButton')
-            .expect.element('@titleResult').text.to.contain(item)
-        this
-            .click('@homePageButton')
+            .click(data.collectionType)
             .pause(5000)
+            .verify.containsText('@titleResult', data.headline)
+            .click('@backSLC')
         return this
     },
-    requestLinkToApplicationThroughEmail: function (email) {
-        this
-            .click('@getTheAppButton')
-            .pause(3000)
-            .setValue('@getAppLink', email)
-            .pause(3000)
-            .click('@shareAppLinkButton')
-            .useXpath()
-            .isVisible({ selector: '//span[contains(text(), "already sent an email to this ID today. Please try again after one hour")]', suppressNotFoundErrors: true }, function (results) {
-                let visible = results.value
-                if (visible === true) {
-                    this
-                        .expect.element('//span[contains(text(), "already sent an email to this ID today. Please try again after one hour")]').to.be.present
-                        console.log('Email has been recently used')
-                    }
-                else {
-                    this
-                        .pause(5000)
-                        .expect.element('//span[contains(text(), "Email sent. Check your email id to find a link to download the app. Happy eating!")]').to.be.present
-                        console.log('Email sent')
-                }
-            })
-        return this
-    },
-    requestLinkToApplicationThroughPhone: function (phone) {
-        this
-            .click('@getTheAppButton')
-            .pause(3000)
-            .click('@phoneRadioButton')
-            .pause(3000)
-            .setValue('@phoneInput', phone)
-            .pause(3000)
-            .click('@shareAppLinkButton')
-            .useXpath()
-            .isVisible({ selector: '//span[contains(text(), "already sent an email to this ID today. Please try again after one hour")]', suppressNotFoundErrors: true }, function (results) {
-                let visible = results.value
-                if (visible === true) {
-                    this
-                        .expect.element('//span[contains(text(), "already sent an email to this ID today. Please try again after one hour")]').to.be.present
-                        console.log('Email has been recently used')
-                }
-                else {
-                    this
-                        .pause(5000)
-                        .expect.element('//span[contains(text(), "Message sent. Check your phone to find a link to download the app. Happy eating!")]').to.be.present
-                        console.log('Email sent')
-                }
-            })
-        return this
-    }
 }
+
+
+
 
 
 module.exports = {
     url: 'https://www.zomato.com/salt-lake-city',
     commands: [zomatoCustomCommands],
     elements: 
-    {     
-        itemSearchInput: 'input[class = "sc-fjmCvl dRCuSW"]',
-        searchButton: 'div[class = "sc-CtfFt dwJcvv"]',
-        titleResult: 'h1',
-        homePageButton: 'a[class = "logo__container left"]',
-        getTheAppButton: 'a[class = "sc-krDsej sc-dTdPqK gUQWLM"]',
-        getAppLink: 'input[class = "sc-1yzxt5f-9 bbrwhB"]',
-        phoneRadioButton: 'input[value = "mobile"]',
-        phoneInput: 'input[placeholder = "type here..."]',
-        shareAppLinkButton: { selector: '(//span[@class="sc-1kx5g6g-3 dkwpEa"])[1]', locateStrategy: 'xpath' },
-        locationDropdown: {selector: '//input[@placeholder="Salt Lake City"]',locateStrategy: 'xpath'},
-        searchBar: {selector: '//input[@placeholder="Search for restaurant, cuisine or a dish"]', locateStrategy: 'xpath'},
-        searchMagnifying: {selector: '//div[@class="sc-CtfFt dwJcvv"]"]', locateStrategy: 'xpath'},
-    //View all green button
-        largeGreenBtn: {selector: '//*/a[@class="ui large green button result-reviews search-result-reviews"]', locateStrategy: 'xpath'},
-        resultsDiv: {selector: 'div.content', locateStrategy: 'css'},
-    //Sign up for account selectors
-        signupBtn: {selector: '//a[contains(text(),"Signup")]', locateStrategy: 'xpath'},
-        nameField: {selector: '(//input[@class="sc-1yzxt5f-9 bbrwhB"])[3]', locateStrategy: 'xpath'},
-        emailField: {selector: '(//input[@class="sc-1yzxt5f-9 bbrwhB"])[4]', locateStrategy: 'xpath'},
-        phoneField: {selector: '//label[contains(text(), "Phone")]', locateStrategy: 'xpath'},
-        countryCode: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/div[1]/div/div/div/div[1]', locateStrategy: 'xpath'},
-        selectCC: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/div[1]/div/div/div/div[2]/div[6]/span', locateStrategy: 'xpath'},
-        tosCheckBox: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/div[2]/label/input', locateStrategy: 'xpath'},
-        createAccBtn: {selector: '/html/body/div[5]/div/div[2]/section[2]/section/button', locateStrategy: 'xpath'},
-        googleBtn: {selector: '//a[contains(text(),"Continue with Google")]', locateStrategy: 'xpath'},
-    //Download from the app store buttons
-        appleAppBtn: {selector: '//*[@id="root"]/div[5]/div/div/div[2]/div[3]/a', locateStrategy: 'xpath'},
-        googlePlayBtn: {selector: '//*[@id="root"]/div[5]/div/div/div[2]/div[3]/div/a', locateStrategy: 'xpath'},
+    {  
+    itemSearchInput: 'input[class = "sc-fjmCvl dRCuSW"]',
+    searchButton: 'div[class = "sc-CtfFt dwJcvv"]',
+    titleResult: 'h1',
+    homePageButton: 'a[class = "logo__container left"]',
+    getTheAppButton: 'a[class = "sc-krDsej sc-dTdPqK gUQWLM"]',
+    getAppLink: 'input[class = "sc-1yzxt5f-9 bbrwhB"]',
+    shareAppLinkButton: 'span[class = "sc-1kx5g6g-3 dkwpEa"]',
+    phoneRadioButton: 'input[value = "mobile"]',
+    phoneInput: 'input[placeholder = "type here..."]',
+    locationDropdown:
+        {selector: '//input[@placeholder="Salt Lake City"]',locateStrategy: 'xpath'},
+    searchBar: 
+        {selector: '//input[@placeholder="Search for restaurant, cuisine or a dish"]',locateStrategy: 'xpath'},
+    searchMagnifying: 
+        {selector: '//div[@class="sc-CtfFt dwJcvv"]"]',locateStrategy: 'xpath'},
     //Search Filters//
         orderFoodOnline:
             {selector: '//span[contains(text(),"Order Food Online")]',locateStrategy: 'xpath'},
         popularityHigh2Low:
-            {selector: '//span[contains(text(),"Popularity")]',locateStrategy: 'xpath'},
+            {selector: '//span[contains(text(),"Popularity")]"]',locateStrategy: 'xpath'},
         rating:
             {selector: '//span[contains(text(),"Rating")]',locateStrategy: 'xpath'},
         costHigh2Low:
@@ -109,17 +47,20 @@ module.exports = {
             {selector: '/html[1]/body[1]/section[1]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]/div[1]/div[4]/a[4]/div[1]/span[1]',locateStrategy: 'xpath'},
         recentlyAdded:
             {selector: '//span[contains(text(),"Recently Added")]',locateStrategy: 'xpath'},
+ 
     //Collections//
         collectionsAllinSLC: 
             {selector: '//a[@class="ks3f96-0 cFSkbc sc-gTKgxx fuJObP"]//span[@class="ks3f96-1 iFQLJx"][contains(text(),"All collections in Salt Lake City")]"]',locateStrategy: 'xpath'},
         collectionsTrending: 
-            {selector: '//div[@class="bke1zw-1 feJJpQ"]//section[@class="sc-jRnjsG auPFq"]',locateStrategy: 'xpath'},
+        'div[class = "bke1zw-1 feJJpQ"]',
         collectionsCheap:
-            {selector: '//div[@class="bke1zw-1 bCCfXM"]//section[@class="sc-jRnjsG auPFq"]',locateStrategy: 'xpath'},
+        'div[class = "bke1zw-1 bCCfXM"]',
         collectionTruckin: 
-            {selector: '//div[@class="ke1zw-1 iHEKOG"]//section[@class="sc-jRnjsG auPFq"]',locateStrategy: 'xpath'},
+        'div[class = "bke1zw-1 iHEKOG"]',
         collectionBurgers: 
-            {selector: '//div[@class="bke1zw-1 fKdtKd"]//section[@class="sc-jRnjsG auPFq"]',locateStrategy: 'xpath'},
+        'div[class = "bke1zw-1 fKdtKd"]',
+        backSLC:
+        {selector: '//span[text()="Salt Lake City"]', locateStrategy: 'xpath'},
     //Locality buttons//
         downtown: 
             {selector: '//h5[contains(text(),"Downtown (213 places)")]"]',locateStrategy: 'xpath'},
@@ -235,50 +176,46 @@ module.exports = {
             {selector: '//a[contains(text(),"Breweries near me")]',locateStrategy: 'xpath'},
         cafes: 
             {selector: '//a[contains(text(),"Cafés near me")]',locateStrategy: 'xpath'},
-        casualDining: 
+        casualdining: 
             {selector: '//a[contains(text(),"Casual Dining near me")]',locateStrategy: 'xpath'},
-        cocktailBars: 
+        cocktailbars: 
             {selector: '//a[contains(text(),"Cocktail Bars near me")]',locateStrategy: 'xpath'},
-        coffeeShops: 
+        coffeebars: 
             {selector: '//a[contains(text(),"Coffee Shop near me")]',locateStrategy: 'xpath'},
         delis: 
             {selector: '//a[contains(text(),"Delis near me")]',locateStrategy: 'xpath'},
-        dessertShops: 
+        dessertshop: 
             {selector: '//a[contains(text(),"Dessert Shops near me")]',locateStrategy: 'xpath'},
-        diners: 
+        diner: 
             {selector: '//a[contains(text(),"Diners near me")]',locateStrategy: 'xpath'},
-        fastCasual: 
+        fastcasual: 
             {selector: '//a[contains(text(),"Fast Casual near me")]',locateStrategy: 'xpath'},
-        fastFood: 
+        fastfood: 
             {selector: '//a[contains(text(),"Fast Food near me")]',locateStrategy: 'xpath'},
-        foodCourts: 
+        foodcourts: 
             {selector: '//a[contains(text(),"Food Courts near me")]',locateStrategy: 'xpath'},
-        foodTrucks: 
+        foodtrucks: 
             {selector: '//a[contains(text(),"Food Trucks near me")]',locateStrategy: 'xpath'},
-        juiceBar: 
+        juicebar: 
             {selector: '//a[contains(text(),"Juice Bar near me")]',locateStrategy: 'xpath'},
         microbreweries: 
             {selector: '//a[contains(text(),"Microbreweries near me")]',locateStrategy: 'xpath'},
-        noodleShops: 
+        noodleshops: 
             {selector: '//a[contains(text(),"Noodle Shops near me")]',locateStrategy: 'xpath'},
         pizzerias: 
             {selector: '//a[contains(text(),"Pizzerias near me")]',locateStrategy: 'xpath'},
         pubs: 
             {selector: '//a[contains(text(),"Pubs near me")]',locateStrategy: 'xpath'},
-        quickBites: 
+        quickbites: 
             {selector: '//a[contains(text(),"Quick Bites near me")]',locateStrategy: 'xpath'},
-        sandwichShops: 
+        sandwichshops: 
             {selector: '//a[contains(text(),"Sandwich Shops near me")]',locateStrategy: 'xpath'},
         taquerias: 
             {selector: '//a[contains(text(),"Taquerias near me")]',locateStrategy: 'xpath'},
         vineyards: 
             {selector: '//a[contains(text(),"Vineyards near me")]',locateStrategy: 'xpath'},
-        wineBars: 
+        winebars: 
             {selector: '//a[contains(text(),"Wine Bars near me")]',locateStrategy: 'xpath'},
-        wineries: 
-            {selector: '//a[contains(text(), "Wineries near me")]',
-            locateStrategy: 'xpath'}
 
-        
-    }
+},
 }
