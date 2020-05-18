@@ -1,6 +1,11 @@
 var zomatoCustomCommands = {
     collection: function (data) { 
         this
+<<<<<<< HEAD
+=======
+            .pause(10000)
+            .setValue('@itemSearchInput', item)
+>>>>>>> 52ace8fc1a6e5b6794cc7b059439a90eb08ffce5
             .pause(5000)
             .click(data.collectionType)
             .pause(5000)
@@ -217,5 +222,10 @@ module.exports = {
         winebars: 
             {selector: '//a[contains(text(),"Wine Bars near me")]',locateStrategy: 'xpath'},
 
+<<<<<<< HEAD
 },
+=======
+        
+    }
+>>>>>>> 52ace8fc1a6e5b6794cc7b059439a90eb08ffce5
 }

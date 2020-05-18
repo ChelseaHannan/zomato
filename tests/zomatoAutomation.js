@@ -19,10 +19,10 @@ module.exports = {
         }
     },
     'Test 2:  Request link to application with email': browser => {
-        myPage.requestLinkToApplicationThroughEmailTwice('sam.thompson11333123@devmounta.in')
+        myPage.requestLinkToApplicationThroughEmail('sam.thompson11333123@devmounta.in')
     },
     'Test 3: Request a link to the application through mobile phone': browser => {
-        myPage.requestLinkToApplicationThroughPhoneTwice(8444338686)
+        myPage.requestLinkToApplicationThroughPhone(8444338686)
     },
     'Collection search': browser => {
         collectionSearch.forEach(test => {
