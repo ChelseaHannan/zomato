@@ -25,32 +25,31 @@ module.exports = {
     'Test: Popular restaurants near me': browser => {
         let nearMeArray = require('../testAssets/nearMeArray')
         let originalWindow = ''
-
-        nearMeArray.forEach(item => {
-            //pulls current window and stores in variable
-            browser.windowHandle(result => {
-                originalWindow = result.value
+    
+            nearMeArray.forEach(item => {
+                //pulls current window and stores in variable
+                browser.windowHandle(result => {
+                    originalWindow = result.value
+                })
+    
+                //clicks link from 'Popular restaurants near me' 
+                myPage
+                    .click(item.link)
+    
+                //switches to new window
+                browser.windowHandles(function(result) {
+                    let handle = result.value[1]
+                    browser.switchWindow(handle)
+                })
+    
+                //assertion
+                myPage
+                    .verify.containsText('@titleResult', item.keyWord)
+    
+                // close current window and switch back to original window
+                browser.closeWindow()
+                browser.switchWindow(originalWindow)       
             })
-
-            //clicks link from 'Popular restaurants near me' 
-            myPage
-                .click(item.link)
-
-            //switches to new window
-            browser.windowHandles(function(result) {
-                let handle = result.value[1]
-                browser.switchWindow(handle)
-            })
-
-            //assertion
-            myPage
-                .verify.containsText('@titleResult', item.keyWord)
-
-            // close current window and switch back to original window
-            browser.closeWindow()
-            browser.switchWindow(originalWindow)
-                
-        })
     },
 
     'Test: View all green button on category pages': browser => {

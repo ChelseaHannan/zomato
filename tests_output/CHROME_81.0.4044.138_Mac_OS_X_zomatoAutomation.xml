@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
+<testsuites errors="1"
             failures="0"
             tests="1">
 
   <testsuite name="zomatoAutomation"
-    errors="0" failures="0" hostname="" id="" package="zomatoAutomation" skipped="0"
-    tests="1" time="10.66" timestamp="">
+    errors="1" failures="0" hostname="" id="" package="zomatoAutomation" skipped="0"
+    tests="1" time="2.151" timestamp="">
   
-    <testcase name="Test: &#34;Download from the app store&#34; buttons at bottom of home page" classname="zomatoAutomation" time="10.66" assertions="4">
-
-    
-
-    
-
-    
-
+    <testcase name="Test: Popular restaurants near me" classname="zomatoAutomation" time="2.151" assertions="0">
+      <error message="myPage.chelTest1 is not a function" type="error">TypeError: myPage.chelTest1 is not a function
+    at Object.Test: Popular restaurants near me (/Users/Chelsea/DevMountain/zomato/tests/zomatoAutomation.js:27:16)
+    at Context.call (/usr/local/lib/node_modules/nightwatch/lib/testsuite/context.js:379:35)
+    at TestCase.run (/usr/local/lib/node_modules/nightwatch/lib/testsuite/testcase.js:49:31)
+    at Runnable.handleRunnable [as __runFn] (/usr/local/lib/node_modules/nightwatch/lib/testsuite/index.js:374:80)
+    at Runnable.run (/usr/local/lib/node_modules/nightwatch/lib/testsuite/runnable.js:123:21)
+    at TestSuite.createRunnable (/usr/local/lib/node_modules/nightwatch/lib/testsuite/index.js:441:33)
+    at TestSuite.handleRunnable (/usr/local/lib/node_modules/nightwatch/lib/testsuite/index.js:446:18)
+    at createSession.then.then._ (/usr/local/lib/node_modules/nightwatch/lib/testsuite/index.js:374:21)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</error>
     
     </testcase>
   
 
+  
+    <system-err>
+      [0;31m  TypeError: myPage.chelTest1 is not a function
+   - writing an ES6 async test case? - keep in mind that commands return a Promise; 
+   - writing unit tests? - make sure to specify &#34;unit_tests_mode=true&#34; in your config.[0m
+[0;90m       at Object.Test: Popular restaurants near me (/Users/Chelsea/DevMountain/zomato/tests/zomatoAutomation.js:27:16)
+       at process._tickCallback (internal/process/next_tick.js:68:7)[0m
+    </system-err>
   
 
   

@@ -96,6 +96,10 @@ module.exports = {
     //Download from the app store buttons
         appleAppBtn: {selector: '//*[@id="root"]/div[5]/div/div/div[2]/div[3]/a', locateStrategy: 'xpath'},
         googlePlayBtn: {selector: '//*[@id="root"]/div[5]/div/div/div[2]/div[3]/div/a', locateStrategy: 'xpath'},
+    //Social media buttons
+        facebookBtn: {selector: '//*[@id="root"]/footer/div/div/div[7]/div[1]/a[1]', locateStrategy: 'xpath'},
+        twitterBtn: {selector: '//*[@id="root"]/footer/div/div/div[7]/div[1]/a[2]', locateStrategy: 'xpath'},
+        instaBtn: {selector: '//*[@id="root"]/footer/div/div/div[7]/div[1]/a[3]', locateStrategy: 'xpath'},
     //Search Filters//
         orderFoodOnline:
             {selector: '//span[contains(text(),"Order Food Online")]',locateStrategy: 'xpath'},
