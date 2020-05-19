@@ -59,8 +59,17 @@ var zomatoCustomCommands = {
                         console.log('Email sent')
                 }
             })
+         return this
+    },
+    collection: function (data) { 
+        this
+            .pause(5000)
+            .click(data.collectionType)
+            .pause(5000)
+            .verify.containsText('@titleResult', data.headline)
+            .click('@backSLC')
         return this
-    }
+    },
 }
 
 
@@ -112,15 +121,16 @@ module.exports = {
             {selector: '//span[contains(text(),"Recently Added")]',locateStrategy: 'xpath'},
     //Collections//
         collectionsAllinSLC: 
-            {selector: '//a[@class="ks3f96-0 cFSkbc sc-gTKgxx fuJObP"]//span[@class="ks3f96-1 iFQLJx"][contains(text(),"All collections in Salt Lake City")]"]',locateStrategy: 'xpath'},
         collectionsTrending: 
-            {selector: '//div[@class="bke1zw-1 feJJpQ"]//section[@class="sc-jRnjsG auPFq"]',locateStrategy: 'xpath'},
+        'div[class = "bke1zw-1 feJJpQ"]',
         collectionsCheap:
-            {selector: '//div[@class="bke1zw-1 bCCfXM"]//section[@class="sc-jRnjsG auPFq"]',locateStrategy: 'xpath'},
+        'div[class = "bke1zw-1 bCCfXM"]',
         collectionTruckin: 
-            {selector: '//div[@class="ke1zw-1 iHEKOG"]//section[@class="sc-jRnjsG auPFq"]',locateStrategy: 'xpath'},
+        'div[class = "bke1zw-1 iHEKOG"]',
         collectionBurgers: 
-            {selector: '//div[@class="bke1zw-1 fKdtKd"]//section[@class="sc-jRnjsG auPFq"]',locateStrategy: 'xpath'},
+        'div[class = "bke1zw-1 fKdtKd"]',
+        backSLC:
+        {selector: '//span[text()="Salt Lake City"]', locateStrategy: 'xpath'},
     //Locality buttons//
         downtown: 
             {selector: '//h5[contains(text(),"Downtown (213 places)")]"]',locateStrategy: 'xpath'},

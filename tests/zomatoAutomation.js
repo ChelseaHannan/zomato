@@ -1,5 +1,6 @@
 let myPage = {}
 
+
 module.exports = {
     beforeEach: browser => {
         myPage = browser.page.zomatoPageObjects()
@@ -159,6 +160,15 @@ module.exports = {
             .closeWindow()
             .switchWindow(originalWindow)
     },
-
-
+   
+    'Collection search': browser => {
+        let collectionSearch = require ('./collectionSearch')
+        collectionSearch.forEach(test => {
+            myPage
+                .pause(5000)
+                .collection(test)
+        })
+    }
+    
 }
+
