@@ -1,2 +1,4 @@
 # zomato
-Group project for manual and automated testing of https://zomato.com.
+DevMountain Software QA group project: automated testing of https://zomato.com. Using nightwatch.js.
+
+
