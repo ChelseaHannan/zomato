@@ -132,107 +132,108 @@ module.exports = {
         backSLC:
         {selector: '//span[text()="Salt Lake City"]', locateStrategy: 'xpath'},
     //Locality buttons//
+        //Locality buttons//
         downtown: 
-            {selector: '//h5[contains(text(),"Downtown (213 places)")]"]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Downtown (213 places)"]', locateStrategy: 'xpath'},
         ogden: 
-            {selector: '//h5[contains(text(),"Ogden (375 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Ogden (375 places)"]', locateStrategy: 'xpath'},
         sugarhouse: 
-            {selector: '//h5[contains(text(),"Sugar House (117 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Sugar House (117 places)"]', locateStrategy: 'xpath'},
         taylorsville: 
-            {selector: '//h5[contains(text(),"Taylorsville (99 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Taylorsville (99 places)"]', locateStrategy: 'xpath'},
         midvale: 
-            {selector: '//h5[contains(text(),"Midvale (141 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Midvale (141 places)"]', locateStrategy: 'xpath'},
         murray: 
-            {selector: '//h5[contains(text(),"Murray (149 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Murray (149 places)"]', locateStrategy: 'xpath'},
         layton: 
-            {selector: '//h5[contains(text(),"Layton (150 places)")]]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Layton (150 places)"]', locateStrategy: 'xpath'},
         holladay: 
-            {selector: '//h5[contains(text(),"Holladay (102 places)")]]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Holladay (102 places)"]', locateStrategy: 'xpath'},
         parkcity: 
-            {selector: '//h5[contains(text(),"Park City (217 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Park City (217 places)"]', locateStrategy: 'xpath'},
         clearfield: 
-            {selector: '//h5[contains(text(),"Clearfield (84 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Clearfield (84 places)"]', locateStrategy: 'xpath'},
         westvalley: 
-            {selector: '//h5[contains(text(),"West Valley (169 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="West Valley (169 places)"]', locateStrategy: 'xpath'},
         southsaltlake: 
-            {selector: '//h5[contains(text(),"South Salt Lake (106 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="South Salt Lake (106 places)"]', locateStrategy: 'xpath'},
         provo: 
-            {selector: '//h5[contains(text(),"Provo (234 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Provo (234 places)"]', locateStrategy: 'xpath'},
         kearns: 
-            {selector: '//h5[contains(text(),"Kearns (37 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Kearns (37 places)"]', locateStrategy: 'xpath'},
         rosepark: 
-            {selector: '//h5[contains(text(),"Rose Park (62 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Rose Park (62 places)"]', locateStrategy: 'xpath'},
         farmington: 
-            {selector: '//h5[contains(text(),"Farmington (33 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Farmington (33 places)"]', locateStrategy: 'xpath'},
         orem: 
-            {selector: '//h5[contains(text(),"Orem (209 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Orem (209 places)"]', locateStrategy: 'xpath'},
         lehi: 
-            {selector: '//h5[contains(text(),"Lehi (73 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Lehi (73 places)"]', locateStrategy: 'xpath'},
         sandy: 
-            {selector: '//h5[contains(text(),"Sandy (168 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Sandy (168 places)"]', locateStrategy: 'xpath'},
         eastcentral: 
-            {selector: '//h5[contains(text(),"East Central (148 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="East Central (148 places)"]', locateStrategy: 'xpath'},
         redwood: 
-            {selector: '//h5[contains(text(),"Redwood (57 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Redwood (57 places)"]', locateStrategy: 'xpath'},
         libertywells: 
-            {selector: '//h5[contains(text(),"Liberty Wells (64 places)"]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Liberty Wells (64 places)"]', locateStrategy: 'xpath'},
         springville: 
-            {selector: '//h5[contains(text(),"Springville (47 places)"]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Springville (47 places)"]', locateStrategy: 'xpath'},
         westjordan: 
-            {selector: '//h5[contains(text(),"West Jordan (137 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="West Jordan (137 places)"]', locateStrategy: 'xpath'},
         spanishfork: 
-            {selector: '//h5[contains(text(),"Spanish Fork (46 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Spanish Fork (46 places)"]', locateStrategy: 'xpath'},
         hebercity: 
-            {selector: '//h5[contains(text(),"Heber City (46 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Heber City (46 places)"]', locateStrategy: 'xpath'},
         magna: 
-            {selector: '//h5[contains(text(),"Magna (29 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Magna (29 places)"]', locateStrategy: 'xpath'},
         centerville: 
-            {selector: '//h5[contains(text(),"Centerville (31 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Centerville (31 places)"]', locateStrategy: 'xpath'},
         central: 
-            {selector: '//h5[contains(text(),"Central (59 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Central (59 places)"]', locateStrategy: 'xpath'},
         bountiful: 
-            {selector: '//h5[contains(text(),"Bountiful (93 places)")]',locateStrategy: 'xpath'},
+            {selector: '//h5[text()="Bountiful (93 places)"]', locateStrategy: 'xpath'},
     //Cuisines//
         americanfood: 
-            {selector: '//a[contains(text(),"American food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="American food near me"]',locateStrategy: 'xpath'},
         asianfood: 
-            {selector: '//a[contains(text(),"Asian food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Asian food near me"]',locateStrategy: 'xpath'},
         bbq: 
-            {selector: '//a[contains(text(),"BBQ food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="BBQ food near me"]',locateStrategy: 'xpath'},
         barfood: 
-            {selector: '//a[contains(text(),"Bar Food food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Bar Food food near me"]',locateStrategy: 'xpath'},
         beverages: 
-            {selector: '//a[contains(text(),"Beverages food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Beverages food near me"]',locateStrategy: 'xpath'},
         burger: 
-            {selector: '//a[contains(text(),"Burger food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Burger food near me"]',locateStrategy: 'xpath'},
         chinese: 
-            {selector: '//a[contains(text(),"Chinese food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Chinese food near me"]',locateStrategy: 'xpath'},
         coffeetea: 
-            {selector: '//a[contains(text(),"Coffee and Tea food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Coffee and Tea food near me"]',locateStrategy: 'xpath'},
         desserts: 
-            {selector: '//a[contains(text(),"Desserts food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Desserts food near me"]',locateStrategy: 'xpath'},
         diner: 
-            {selector: '//a[contains(text(),"Diner food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Diner food near me"]',locateStrategy: 'xpath'},
         italian: 
-            {selector: '//a[contains(text(),"Italian food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Italian food near me"]',locateStrategy: 'xpath'},
         japanese: 
-            {selector: '//a[contains(text(),"Japanese food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Japanese food near me"]',locateStrategy: 'xpath'},
         mexican: 
-            {selector: '//a[contains(text(),"Mexican food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Mexican food near me"]',locateStrategy: 'xpath'},
         pizza: 
-            {selector: '//a[contains(text(),"Pizza food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Pizza food near me"]',locateStrategy: 'xpath'},
         sandwich: 
-            {selector: '//a[contains(text(),"Sandwich food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Sandwich food near me"]',locateStrategy: 'xpath'},
         seafood: 
-            {selector: '//a[contains(text(),"Seafood food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Seafood food near me"]',locateStrategy: 'xpath'},
         steak: 
-            {selector: '//a[contains(text(),"Steak food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Steak food near me"]',locateStrategy: 'xpath'},
         sushi: 
-            {selector: '//a[contains(text(),"Sushi food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Sushi food near me"]',locateStrategy: 'xpath'},
         thai: 
-            {selector: '//a[contains(text(),"Thai food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Thai food near me"]',locateStrategy: 'xpath'},
         vegetarian: 
-            {selector: '//a[contains(text(),"Vegetarian food near me")]',locateStrategy: 'xpath'},
+            {selector: '//a[text()="Vegetarian food near me"]',locateStrategy: 'xpath'},
     //Resturants//
         bakeries: 
             {selector: '//a[contains(text(),"Bakeries near me")]',locateStrategy: 'xpath'},
@@ -289,6 +290,21 @@ module.exports = {
         wineries: 
             {selector: '//a[contains(text(), "Wineries near me")]',
             locateStrategy: 'xpath'}
+    //Local filters
+        popularity: 
+            {selector: '//span[text()="Popularity "]', locateStrategy: 'xpath'},
+        rating:
+            {selector: '//span[text()="Rating "]', locateStrategy: 'xpath'},
+        highCost:
+            {selector: '(//span[text()="Cost "])[1]', locateStrategy: 'xpath'},
+        lowCost: 
+            {selector: '(//span[text()="Cost "])[2]', locateStrategy: 'xpath'},
+        recentlyAdded:
+            {selector: '//span[text()="Recently Added "]', locateStrategy: 'xpath'},
+        header: 
+            {selector: '(//h1)[2]', locateStrategy: 'xpath'},
+        header2:
+            {selector: '//h1', locateStrategy: 'xpath'},
 
         
     }
