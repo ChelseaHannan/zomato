@@ -116,6 +116,47 @@ module.exports = {
             .verify.urlContains('play.google.com')
             .verify.containsText('h1', 'Zomato')     
     },
+    
+       'locality test': browser => {
+        var localArray = require('../testAssets/localArray')
+        var localitiesObject = {
+            localities: (pageObject, local) => {
+                pageObject
+                    .click(local.town)
+                    .verify.containsText('@header', local.res)
+                    .click('@popularity')
+                    .click('@rating')
+                    .click('@highCost')
+                    .click('@lowCost')
+                    .click('@recentlyAdded')
+                    .click('@homePageButton')
+            }
+        }
+        localArray.forEach(results => {
+            localitiesObject.localities(myPage, results)
+        })
+    },
+    
+     'cuisines test': browser => {
+        var cuisineArray = require('../testAssets/cuisineArray')
+        var originalWindow = ""
+
+        cuisineArray.forEach(item => {
+                browser.windowHandle(result => {
+                originalWindow = result.value
+                })
+            myPage
+                .click(item.food)
+                browser.windowHandles(function(result) {
+                    var handle = result.value[1]
+                    browser.switchWindow(handle)
+                })
+            myPage
+                .verify.containsText('@header2', item.word)
+            browser.closeWindow()
+            browser.switchWindow(originalWindow)       
+        })
+    },
 
     'Test: Social media links': browser => {
         let originalWindow = ''
