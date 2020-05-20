@@ -289,7 +289,7 @@ module.exports = {
             {selector: '//a[contains(text(),"Wine Bars near me")]',locateStrategy: 'xpath'},
         wineries: 
             {selector: '//a[contains(text(), "Wineries near me")]',
-            locateStrategy: 'xpath'}
+            locateStrategy: 'xpath'},
     //Local filters
         popularity: 
             {selector: '//span[text()="Popularity "]', locateStrategy: 'xpath'},
